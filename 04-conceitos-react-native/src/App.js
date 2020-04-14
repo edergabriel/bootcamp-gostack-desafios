@@ -26,14 +26,14 @@ export default function App() {
 
     const repositoriesUpdated = repositories.map(repository => {
       if (repository.id === id) {
-        return likedRep;
+        return { ... repository, likedRep } ;
       } else {
         return repository;
       }
     });
 
     setRepositories(repositoriesUpdated);
-  }
+  };
 
   return (
     <>
@@ -60,7 +60,7 @@ export default function App() {
                     // Remember to replace "1" below with repository ID: {`repository-likes-${repository.id}`}
                     testID={`repository-likes-${repository.id}`}
                   >
-                  {repository.likes} curtidas
+                  {repository.likes} { repository.likes == 1 ? "curtida" : "curtidas" }
                   </Text>
                 </View>
 

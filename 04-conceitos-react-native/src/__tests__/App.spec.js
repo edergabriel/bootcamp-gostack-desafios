@@ -58,9 +58,9 @@ describe("Likes", () => {
         techs: ["React Native", "Node.js"],
         likes: 1,
       });
-
+    console.log("a");
     await actWait();
-
+    console.log('b');
     fireEvent.press(getByTestId(`like-button-${repositoryId}`));
 
     await actWait();
